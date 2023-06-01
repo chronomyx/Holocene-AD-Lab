@@ -85,9 +85,9 @@ module domainController 'modules/vm.bicep' = {
     vmSize: virtualMachineSize
     vmPublisher: 'MicrosoftWindowsServer'
     vmOffer: 'WindowsServer'
-    vmSku: '2019-Datacenter'
+    vmSku: '2022-Datacenter'
     vmVersion: 'latest'
-    vmStorageAccountType: 'StandardSSD_LRS'
+    vmStorageAccountType: 'Standard_LRS'
     adminUsername: adminUsername
     adminPassword: adminPassword
   }
@@ -106,7 +106,7 @@ resource domainControllerConfiguration 'Microsoft.Compute/virtualMachines/extens
     typeHandlerVersion: '2.77'
     autoUpgradeMinorVersion: true
     settings: {
-      ModulesUrl: 'https://github.com/joshua-a-lucas/BlueTeamLab/raw/main/scripts/Deploy-DomainServices.zip'
+      ModulesUrl: 'https://github.com/chronomyx/Holocene-AD-Lab/blob/main/scripts/Deploy-DomainServices.zip'
       ConfigurationFunction: 'Deploy-DomainServices.ps1\\Deploy-DomainServices'
       Properties: {
         domainFQDN: domainFQDN
